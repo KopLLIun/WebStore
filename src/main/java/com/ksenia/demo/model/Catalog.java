@@ -8,8 +8,9 @@ import javax.persistence.Table;
  * Copyright (c) 2020 apollon GmbH+Co. KG All Rights Reserved.
  */
 
+@Deprecated
 @Entity
-@Table(name = "catalog")
+//@Table(name = "catalog")
 public class Catalog
 {
 	@Id

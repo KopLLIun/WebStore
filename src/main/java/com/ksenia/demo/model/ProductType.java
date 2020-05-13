@@ -8,6 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.Data;
@@ -17,19 +18,17 @@ import lombok.Data;
  */
 
 @Entity
-@Table(name = "product")
+@Table(name = "product_type")
 @Data
-public class Product
+public class ProductType
 {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String name;
-	private double price;
-	private int amount;
-	private String description;
 	@ManyToOne
-	@JoinColumn(name = "product_type_id")
+	@JoinColumn(name = "category_id")
 	private ProductType productType;
-
+	@OneToMany(mappedBy = "productType")
+	private Set<Product> products;
 }

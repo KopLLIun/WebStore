@@ -1,12 +1,15 @@
+/*
 package com.ksenia.demo.controller;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+*/
 /**
  * Copyright (c) 2020 apollon GmbH+Co. KG All Rights Reserved.
- */
+ *//*
+
 
 @Configuration
 public class SecuringWeb implements WebMvcConfigurer
@@ -18,3 +21,4 @@ public class SecuringWeb implements WebMvcConfigurer
 		registry.addViewController("/login").setViewName("login");
 	}
 }
+*/

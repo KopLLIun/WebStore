@@ -8,8 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.ksenia.demo.model.Address;
 import com.ksenia.demo.model.Role;
 import com.ksenia.demo.model.User;
+import com.ksenia.demo.repository.AddressRepository;
 import com.ksenia.demo.repository.RoleRepository;
 import com.ksenia.demo.repository.UserRepository;
 import com.ksenia.demo.service.IUserService;
@@ -28,7 +30,10 @@ public class UserServiceImpl implements IUserService
 	@Autowired
 	private RoleRepository roleRepository;
 
-	private BCryptPasswordEncoder bCryptPasswordEncoder;
+	@Autowired
+	private AddressRepository addressRepository;
+
+	private final BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
 
 	@Override
 	public User getUserById(Integer id)
@@ -37,9 +42,9 @@ public class UserServiceImpl implements IUserService
 	}
 
 	@Override
-	public User findUserByName(String name)
+	public User findUserByLogin(String name)
 	{
-		return userRepository.findUserByName(name);
+		return userRepository.findUserByLogin(name);
 	}
 
 	@Override
@@ -55,7 +60,15 @@ public class UserServiceImpl implements IUserService
 		Set<Role> roles = new HashSet<>();
 		roles.add(roleRepository.getOne(2));
 		user.setRoles(roles);
-		userRepository.save(user);
+		user.setActive(1);
+		Address address = new Address();
+		address.setTown("asd");
+		address.setStreet("asd");
+		address.setHouseNumber(2);
+		address.setFlatNumber(1);
+		addressRepository.saveAndFlush(address);
+		user.setAddress(address);
+		userRepository.saveAndFlush(user);
 	}
 
 	@Override
