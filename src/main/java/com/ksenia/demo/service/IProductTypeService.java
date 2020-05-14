@@ -1,6 +1,7 @@
 package com.ksenia.demo.service;
 
 import java.util.List;
+import java.util.Set;
 
 import com.ksenia.demo.model.ProductType;
 
@@ -14,4 +15,6 @@ public interface IProductTypeService
 	void addProductType(ProductType productType);
 	ProductType editProduct(ProductType productType);
 	void deleteProduct(Integer id);
+	Set<ProductType> getProductsTypeByCategoryName(String name);
+	ProductType getProductTypeByName(String name);
 }

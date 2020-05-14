@@ -14,4 +14,5 @@ public interface ICategoryService
 	void addCategory(Category category);
 	Category editCategory(Category category);
 	void deleteCategory(Integer id);
+	Category getCategoryByName(String name);
 }

@@ -12,6 +12,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
 /**
  * Copyright (c) 2020 apollon GmbH+Co. KG All Rights Reserved.
@@ -28,7 +30,17 @@ public class ProductType
 	private String name;
 	@ManyToOne
 	@JoinColumn(name = "category_id")
-	private ProductType productType;
-	@OneToMany(mappedBy = "productType")
+	private Category category;
+	@EqualsAndHashCode.Exclude @ToString.Exclude
+	@OneToMany(mappedBy = "type")
 	private Set<Product> products;
+
+	@Override
+	public String toString()
+	{
+		return "ProductType{" +
+			"id=" + id +
+			", name='" + name + '\'' +
+			'}';
+	}
 }

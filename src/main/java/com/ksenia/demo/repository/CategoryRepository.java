@@ -10,4 +10,5 @@ import com.ksenia.demo.model.Category;
 public interface CategoryRepository extends JpaRepository<Category, Integer>
 {
 //	Category getCategoryById(Integer id);
+	Category findCategoryByName(String name);
 }

@@ -31,9 +31,8 @@ public class CustomUserDetailsService implements UserDetailsService
 	private UserRepository userRepository;
 
 	@Override
-	@Transactional
-	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		User user = userRepository.findUserByLogin(username);
+	public UserDetails loadUserByUsername(String login) throws UsernameNotFoundException {
+		User user = userRepository.findUserByLogin(login);
 
 		Set<GrantedAuthority> grantedAuthorities = new HashSet<>();
 

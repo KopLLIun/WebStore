@@ -1,3 +1,4 @@
+/*
 package com.ksenia.demo.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,9 +11,11 @@ import org.springframework.stereotype.Service;
 
 import com.ksenia.demo.service.ISecurityService;
 
+*/
 /**
  * Copyright (c) 2020 apollon GmbH+Co. KG All Rights Reserved.
- */
+ *//*
+
 
 @Service
 public class SecurityServiceImpl implements ISecurityService
@@ -49,3 +52,4 @@ public class SecurityServiceImpl implements ISecurityService
 		}
 	}
 }
+*/

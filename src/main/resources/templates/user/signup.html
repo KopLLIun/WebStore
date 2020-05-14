@@ -53,7 +53,7 @@
 				</div>
 			</div>
 		</div>
-<!--		<div class="row">
+		<div class="row">
 			<div class="col-md-3 field-label-responsive">
 				<label for="town">Town</label>
 			</div>
@@ -61,14 +61,14 @@
 				<div class="form-group">
 					<div class="input-group mb-2 mr-sm-2 mb-sm-0">
 						<div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-at"></i></div>
-						<input type="text" th:field="*{address.getTown()}" class="form-control" id="town"
+						<input type="text" th:field="*{address.town}" class="form-control" id="town"
 								placeholder="Grodno" required autofocus>
 					</div>
 				</div>
 			</div>
 			<div class="col-md-3">
 				<div class="form-control-feedback">
-                         <span class="text-danger align-middle" th:if="${#fields.hasErrors('town')}" th:errors="*{login}">
+                         <span class="text-danger align-middle" th:if="${#fields.hasErrors('address.town')}" th:errors="*{login}">
                          </span>
 				</div>
 			</div>
@@ -81,14 +81,14 @@
 				<div class="form-group">
 					<div class="input-group mb-2 mr-sm-2 mb-sm-0">
 						<div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-at"></i></div>
-						<input type="text" th:field="*{address.getStreet()}" class="form-control" id="street"
+						<input type="text" th:field="*{address.street}" class="form-control" id="street"
 								placeholder="Limozha" required autofocus>
 					</div>
 				</div>
 			</div>
 			<div class="col-md-3">
 				<div class="form-control-feedback">
-                         <span class="text-danger align-middle" th:if="${#fields.hasErrors('street')}" th:errors="*{login}">
+                         <span class="text-danger align-middle" th:if="${#fields.hasErrors('address.street')}" th:errors="*{login}">
                          </span>
 				</div>
 			</div>
@@ -101,14 +101,14 @@
 				<div class="form-group">
 					<div class="input-group mb-2 mr-sm-2 mb-sm-0">
 						<div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-at"></i></div>
-						<input type="text" th:field="*{address.getHouseNumber()}" class="form-control" id="house_number"
+						<input type="text" th:field="*{address.houseNumber}" class="form-control" id="house_number"
 								placeholder="username@jackrutorial.com" required autofocus>
 					</div>
 				</div>
 			</div>
 			<div class="col-md-3">
 				<div class="form-control-feedback">
-                         <span class="text-danger align-middle" th:if="${#fields.hasErrors('houseNumber')}" th:errors="*{login}">
+                         <span class="text-danger align-middle" th:if="${#fields.hasErrors('address.houseNumber')}" th:errors="*{login}">
                          </span>
 				</div>
 			</div>
@@ -121,18 +121,18 @@
 				<div class="form-group">
 					<div class="input-group mb-2 mr-sm-2 mb-sm-0">
 						<div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-at"></i></div>
-						<input type="text" th:field="*{address.getFlatNumber()}" class="form-control" id="flat_number"
+						<input type="text" th:field="*{address.flatNumber}" class="form-control" id="flat_number"
 								placeholder="username@jackrutorial.com" required autofocus>
 					</div>
 				</div>
 			</div>
 			<div class="col-md-3">
 				<div class="form-control-feedback">
-                         <span class="text-danger align-middle" th:if="${#fields.hasErrors('flat_number')}" th:errors="*{login}">
+                         <span class="text-danger align-middle" th:if="${#fields.hasErrors('address.flatNumber')}" th:errors="*{login}">
                          </span>
 				</div>
 			</div>
-		</div>-->
+		</div>
 		<div class="row">
 			<div class="col-md-3 field-label-responsive">
 				<label for="login">login</label>

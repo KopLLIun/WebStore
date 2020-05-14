@@ -10,6 +10,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
 /**
  * Copyright (c) 2020 apollon GmbH+Co. KG All Rights Reserved.
@@ -24,6 +26,16 @@ public class Category
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String name;
-	@OneToMany(mappedBy = "productType")
+	@EqualsAndHashCode.Exclude @ToString.Exclude
+	@OneToMany(mappedBy = "category")
 	private Set<ProductType> productTypes;
+
+	@Override
+	public String toString()
+	{
+		return "Category{" +
+			"id=" + id +
+			", name='" + name + '\'' +
+			'}';
+	}
 }

@@ -30,6 +30,17 @@ public class Product
 	private String description;
 	@ManyToOne
 	@JoinColumn(name = "product_type_id")
-	private ProductType productType;
+	private ProductType type;
 
+	@Override
+	public String toString()
+	{
+		return "Product{" +
+			"id=" + id +
+			", name='" + name + '\'' +
+			", price=" + price +
+			", amount=" + amount +
+			", description='" + description + '\'' +
+			'}';
+	}
 }

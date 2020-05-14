@@ -9,4 +9,5 @@ import com.ksenia.demo.model.ProductType;
  */
 public interface ProductTypeRepository extends JpaRepository<ProductType, Integer>
 {
+	ProductType getProductTypeByName(String name);
 }
