@@ -1,6 +1,7 @@
 package com.ksenia.demo.model;
 
 import java.util.Date;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,6 +9,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -30,6 +33,11 @@ public class Booking
 	@ManyToOne
 	@JoinColumn(name = "user_id")
 	private User user;
+
+	@ManyToMany
+	@JoinTable(name = "booking_products", joinColumns = @JoinColumn(name = "booking_id"),
+		inverseJoinColumns = @JoinColumn(name = "product_id"))
+	Set<Product> products;
 
 	@Override
 	public String toString()
